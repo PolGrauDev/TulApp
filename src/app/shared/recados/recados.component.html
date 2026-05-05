@@ -1,0 +1,7 @@
+<h3>Recados</h3>
+
+<div class="container">
+  @for (item of recado.recados(); track $index) {
+    <app-recado [recadoRecibido]="item"></app-recado>
+  }
+</div>

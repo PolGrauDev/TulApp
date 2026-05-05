@@ -1,0 +1,60 @@
+
+
+<ion-content class="ion-padding">
+  <div class="container">
+    <h2>Perfil de Usuario</h2>
+
+    <form [formGroup]="profileForm">
+      <div class="form-group">
+        <!-- Nombre -->
+        <div class="field">
+          <label>Nombre</label>
+          <input formControlName="nombre" type="text" placeholder="Introduce tu nombre">
+        </div>
+
+        <!-- Dirección -->
+        <div class="field">
+          <label>Dirección</label>
+          <input formControlName="direccion" type="text" placeholder="Dirección completa">
+        </div>
+
+        <!-- Idioma (Select) -->
+        <div class="field">
+          <label>Idioma Preferido</label>
+          <select formControlName="idioma">
+            <option *ngFor="let lang of languages" [value]="lang">
+              {{ lang }}
+            </option>
+          </select>
+        </div>
+
+        <!-- Teléfono -->
+        <div class="field">
+          <label>Número de Teléfono</label>
+          <input formControlName="telefono" type="tel" placeholder="9 cifras">
+        </div>
+
+        <!-- Contacto Emergencia -->
+        <div class="field">
+          <label>Contacto de Emergencia</label>
+          <input formControlName="emergencia" type="text" placeholder="Nombre del contacto">
+        </div>
+      </div>
+
+      <!-- Botón Dinámico con Clases CSS Condicionales -->
+      <div class="actions">
+        <button 
+          type="button"
+          [class.btn-save]="isEditable()" 
+          [class.btn-edit]="!isEditable()"
+          (click)="handleAction()">
+          {{ isEditable() ? '💾 Guardar Cambios' : '✏️ Editar Perfil' }}
+        </button>
+        
+        <p *ngIf="isEditable() && profileForm.invalid" class="error-text">
+          Por favor, rellena todos los campos correctamente.
+        </p>
+      </div>
+    </form>
+  </div>
+</ion-content>

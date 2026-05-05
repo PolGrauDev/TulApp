@@ -1,0 +1,39 @@
+// btn-telefono.component.scss
+// Estilos del botón circular de teléfono reutilizable.
+// Se apoya en los tokens globales de styles.scss / global.scss
+
+.btn-tel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--tula-spacing-xs);
+  width: 110px;
+  height: 110px;
+  background-color: var(--tula-surface);
+  color: var(--tula-text-primary);
+  border: 2px solid var(--tula-border);
+  border-radius: 50%;
+  font-family: var(--tula-font-body);
+  font-size: var(--tula-text-base);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+
+  ion-icon {
+    font-size: 2rem;
+    color: var(--tula-primary);
+  }
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--tula-primary-light);
+    border-color: var(--tula-primary);
+    outline: 3px solid var(--tula-focus-ring);
+    outline-offset: 3px;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}

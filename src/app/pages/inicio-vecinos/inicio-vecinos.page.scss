@@ -1,0 +1,161 @@
+// ============================================================
+// inicio-vecinos.page.scss
+// Estilos específicos de la página. Las variables y reset base
+// vienen de styles.scss (globales).
+// ============================================================
+
+.iv-content {
+  --background: var(--tula-bg);
+}
+
+// Contenedor principal
+.iv-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  padding: var(--tula-spacing-xl) var(--tula-spacing-lg);
+  gap: var(--tula-spacing-xl);
+}
+
+// Cabecera
+.iv-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--tula-spacing-sm);
+  text-align: center;
+}
+
+.iv-logo {
+  width: 72px;
+  height: auto;
+}
+
+.iv-title {
+  font-family: var(--tula-font-display);
+  font-size: var(--tula-text-2xl);
+  font-weight: 700;
+  color: var(--tula-text-primary);
+  margin: 0;
+  line-height: 1.2;
+}
+
+// Botón principal
+.iv-main-action {
+  width: 100%;
+  max-width: 380px;
+}
+
+.iv-btn-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--tula-spacing-sm);
+  width: 100%;
+  padding: var(--tula-spacing-lg) var(--tula-spacing-xl);
+  background-color: var(--tula-primary);
+  color: var(--tula-on-primary);
+  border: none;
+  border-radius: var(--tula-radius-lg);
+  font-family: var(--tula-font-body);
+  font-size: var(--tula-text-xl);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+  transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+
+  ion-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+  }
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--tula-primary-dark);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.24);
+    outline: 3px solid var(--tula-focus-ring);
+    outline-offset: 3px;
+  }
+
+  &:active {
+    transform: scale(0.97);
+  }
+}
+
+// Separador
+.iv-divider {
+  display: flex;
+  align-items: center;
+  gap: var(--tula-spacing-sm);
+  width: 100%;
+  max-width: 380px;
+  color: var(--tula-text-muted);
+  font-family: var(--tula-font-body);
+  font-size: var(--tula-text-base);
+
+  &::before,
+  &::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background-color: var(--tula-border);
+  }
+}
+
+// Botones secundarios
+.iv-secondary-actions {
+  display: flex;
+  gap: var(--tula-spacing-lg);
+  justify-content: center;
+}
+
+.iv-btn-secondary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--tula-spacing-xs);
+  width: 120px;
+  height: 120px;
+  background-color: var(--tula-surface);
+  color: var(--tula-text-primary);
+  border: 2px solid var(--tula-border);
+  border-radius: 50%;
+  font-family: var(--tula-font-body);
+  font-size: var(--tula-text-base);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+
+  ion-icon {
+    font-size: 2rem;
+    color: var(--tula-primary);
+  }
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--tula-primary-light);
+    border-color: var(--tula-primary);
+    outline: 3px solid var(--tula-focus-ring);
+    outline-offset: 3px;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+// inicio-vecinos.page.scss
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.iv-content {
+  --background: var(--tula-bg);
+  height: 100%;
+}

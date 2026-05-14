@@ -3,15 +3,13 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'inicio-vecinos',
+    redirectTo: 'tabs',
     pathMatch: 'full',
   },
   {
-    path: 'inicio-vecinos',
-    loadComponent: () =>
-      import('./pages/inicio-vecinos/inicio-vecinos.page').then(
-        (m) => m.InicioVecinosPage
-      ),
+    path: 'tabs',
+    loadChildren: () =>
+      import('./tabs/tabs.routes').then((m) => m.routes),
   },
   {
     path: 'categoria-vecinos',
@@ -20,9 +18,10 @@ export const routes: Routes = [
         (m) => m.CategoriaVecinosPage
       ),
   },
-  {
-    path: 'tabs',
-    loadChildren: () =>
-      import('./tabs/tabs.routes').then((m) => m.routes),
-  },
+  // Rutas placeholder — implementar cuando estén listas
+  { path: 'nueva-solicitud', redirectTo: 'tabs', pathMatch: 'full' },
+  { path: 'historial-recados', redirectTo: 'tabs/perfil', pathMatch: 'full' },
+  { path: 'configuracion', redirectTo: 'tabs/perfil', pathMatch: 'full' },
+  { path: 'login', redirectTo: 'tabs', pathMatch: 'full' },
+  { path: '**', redirectTo: 'tabs' },
 ];

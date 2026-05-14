@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { IonContent, IonIcon } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
-import { addCircleOutline, micOutline } from 'ionicons/icons';
+import { addOutline } from 'ionicons/icons';
 import { BtnTelefonoComponent } from '../../shared/components/btn-telefono/btn-telefono.component';
 
 @Component({
@@ -14,17 +14,15 @@ import { BtnTelefonoComponent } from '../../shared/components/btn-telefono/btn-t
 })
 export class InicioVecinosPage {
 
+  // Sustituir por el nombre real del usuario autenticado
+  nombreUsuario: string = 'Carmen';
+
   constructor(private router: Router) {
-    addIcons({ addCircleOutline, micOutline });
+    addIcons({ addOutline });
   }
 
-nuevaSolicitud(): void {
-  (document.activeElement as HTMLElement)?.blur();
-  this.router.navigate(['/categoria-vecinos']);
-}
-
-notaDeVoz(): void {
-  (document.activeElement as HTMLElement)?.blur();
-  this.router.navigate(['/nota-voz']);
-}
+  nuevaSolicitud(): void {
+    (document.activeElement as HTMLElement)?.blur();
+    this.router.navigate(['/categoria-vecinos']);
+  }
 }

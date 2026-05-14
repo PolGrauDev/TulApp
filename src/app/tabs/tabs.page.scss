@@ -1,1 +1,60 @@
+// ============================================================
+// tabs.page.scss
+// Tab bar inferior — fondo blanco, tab activo en verde
+// ============================================================
 
+.tula-tab-bar {
+  --background: #ffffff;
+  --border: none;
+  border-top: 1px solid var(--tula-border, #e8e4dc);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  height: 64px;
+}
+
+.tula-tab-btn {
+  --color: var(--tula-text-muted, #9e9e8e);
+  --color-selected: var(--tula-on-primary, #ffffff);
+  --padding-top: 0;
+  --padding-bottom: 0;
+
+  ion-icon {
+    font-size: 1.4rem;
+    margin-bottom: 2px;
+  }
+
+  ion-label {
+    font-family: var(--tula-font-body);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+  }
+
+  // Tab activo: pastilla verde redondeada
+  &.tab-selected {
+    --color-selected: var(--tula-on-primary, #ffffff);
+
+    .tab-has-label-only,
+    ion-icon,
+    ion-label {
+      color: var(--tula-on-primary, #ffffff);
+    }
+
+    // Capsule verde de fondo para el tab activo
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 6px 4px;
+      background-color: var(--tula-primary, #3a6b35);
+      border-radius: 14px;
+      z-index: 0;
+    }
+
+    ion-icon,
+    ion-label {
+      position: relative;
+      z-index: 1;
+    }
+  }
+}

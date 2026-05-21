@@ -1,0 +1,93 @@
+<ion-header class="ns-header ion-no-border">
+  <ion-toolbar class="ns-toolbar">
+    <div class="ns-toolbar__inner">
+      <button class="ns-back" (click)="volver()" aria-label="Volver">
+        <ion-icon name="arrow-back-outline" aria-hidden="true"></ion-icon>
+      </button>
+      <span class="ns-toolbar__title">TULAPP</span>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ns-content" [fullscreen]="true">
+  <div class="ns-container">
+
+
+    <div class="ns-categoria-card">
+      <div class="ns-categoria-card__icon">
+        <ion-icon [name]="categoriaMeta.icon" aria-hidden="true"></ion-icon>
+      </div>
+      <div class="ns-categoria-card__info">
+        <span class="ns-categoria-card__label">CATEGORÍA SELECCIONADA:</span>
+        <span class="ns-categoria-card__valor">{{ categoriaMeta.label }}</span>
+      </div>
+    </div>
+
+
+    <form [formGroup]="form" (ngSubmit)="enviarSolicitud()" novalidate>
+
+
+      <div class="ns-section">
+        <div class="ns-section__header">
+          <h2 class="ns-section__title">Descripción</h2>
+          <button type="button" class="ns-btn-audio" aria-label="Grabar nota de voz">
+            <ion-icon name="mic-outline" aria-hidden="true"></ion-icon>
+            Grabar nota
+          </button>
+        </div>
+        <textarea class="ns-textarea" formControlName="descripcion" [placeholder]="categoriaMeta.placeholder" rows="4"
+          aria-label="Descripción de la solicitud"
+          [class.ns-textarea--error]="descripcionCtrl.invalid && descripcionCtrl.touched"></textarea>
+        @if (descripcionCtrl.invalid && descripcionCtrl.touched) {
+        <span class="ns-error" role="alert">
+          @if (descripcionCtrl.hasError('required')) { La descripción es obligatoria. }
+          @if (descripcionCtrl.hasError('minlength')) { Mínimo 10 caracteres. }
+        </span>
+        }
+      </div>
+
+
+      <div class="ns-section">
+        <div class="ns-section__header">
+          <h2 class="ns-section__title">Fecha</h2>
+          <button type="button" class="ns-btn-audio" aria-label="Grabar nota de voz para fecha">
+            <ion-icon name="mic-outline" aria-hidden="true"></ion-icon>
+            Grabar nota
+          </button>
+        </div>
+        <div class="ns-input-wrap">
+          <input class="ns-input" type="date" formControlName="fecha" aria-label="Fecha de la solicitud"
+            [class.ns-input--error]="fechaCtrl.invalid && fechaCtrl.touched" />
+          <ion-icon name="calendar-outline" class="ns-input__icon" aria-hidden="true"></ion-icon>
+        </div>
+        @if (fechaCtrl.invalid && fechaCtrl.touched) {
+        <span class="ns-error" role="alert">La fecha es obligatoria.</span>
+        }
+      </div>
+
+
+      <div class="ns-section">
+        <div class="ns-section__header">
+          <h2 class="ns-section__title">Hora</h2>
+          <button type="button" class="ns-btn-audio" aria-label="Grabar nota de voz para hora">
+            <ion-icon name="mic-outline" aria-hidden="true"></ion-icon>
+            Grabar nota
+          </button>
+        </div>
+        <div class="ns-input-wrap">
+          <input class="ns-input" type="time" formControlName="hora" aria-label="Hora de la solicitud"
+            [class.ns-input--error]="horaCtrl.invalid && horaCtrl.touched" />
+          <ion-icon name="time-outline" class="ns-input__icon" aria-hidden="true"></ion-icon>
+        </div>
+        @if (horaCtrl.invalid && horaCtrl.touched) {
+        <span class="ns-error" role="alert">La hora es obligatoria.</span>
+        }
+      </div>
+
+      <button type="submit" class="ns-btn-enviar" [disabled]="form.invalid" aria-label="Enviar solicitud">
+        Enviar Solicitud
+      </button>
+
+    </form>
+  </div>
+</ion-content>

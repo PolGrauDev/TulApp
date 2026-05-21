@@ -15,7 +15,6 @@ import { BtnTelefonoComponent } from '../../shared/components/btn-telefono/btn-t
 })
 export class InicioPage {
 
-  // Sustituir por el nombre real del usuario autenticado
   nombreUsuario: string = 'Carmen';
 
   constructor(private router: Router) {

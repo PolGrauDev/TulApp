@@ -10,22 +10,12 @@
   <div class="sol-container">
 
     <div class="sol-segment" role="tablist" aria-label="Filtro de solicitudes">
-      <button
-        class="sol-segment__btn"
-        [class.sol-segment__btn--active]="tabActivo === 'en-curso'"
-        (click)="cambiarTab('en-curso')"
-        role="tab"
-        [attr.aria-selected]="tabActivo === 'en-curso'"
-      >
+      <button class="sol-segment__btn" [class.sol-segment__btn--active]="tabActivo === 'en-curso'"
+        (click)="cambiarTab('en-curso')" role="tab" [attr.aria-selected]="tabActivo === 'en-curso'">
         En curso
       </button>
-      <button
-        class="sol-segment__btn"
-        [class.sol-segment__btn--active]="tabActivo === 'pendientes'"
-        (click)="cambiarTab('pendientes')"
-        role="tab"
-        [attr.aria-selected]="tabActivo === 'pendientes'"
-      >
+      <button class="sol-segment__btn" [class.sol-segment__btn--active]="tabActivo === 'pendientes'"
+        (click)="cambiarTab('pendientes')" role="tab" [attr.aria-selected]="tabActivo === 'pendientes'">
         Pendientes
       </button>
     </div>
@@ -33,12 +23,8 @@
     <section class="sol-list" aria-label="Listado de solicitudes">
 
       <ng-container *ngIf="solicitudesFiltradas.length > 0; else sinSolicitudes">
-        <div
-          *ngFor="let s of solicitudesFiltradas"
-          class="sol-card"
-          role="article"
-          [attr.aria-label]="s.tipo + ' - ' + s.estado"
-        >
+        <div *ngFor="let s of solicitudesFiltradas" class="sol-card" role="article"
+          [attr.aria-label]="s.tipo + ' - ' + s.estado">
           <div class="sol-card__icon-wrap">
             <ion-icon [name]="s.icon" aria-hidden="true"></ion-icon>
           </div>
@@ -46,11 +32,8 @@
             <span class="sol-card__tipo">{{ s.tipo }}</span>
             <span class="sol-card__fecha">{{ s.fecha }}</span>
           </div>
-          <span
-            class="sol-card__badge"
-            [ngClass]="'sol-card__badge--' + s.estadoKey"
-            [attr.aria-label]="'Estado: ' + s.estado"
-          >
+          <span class="sol-card__badge" [ngClass]="'sol-card__badge--' + s.estadoKey"
+            [attr.aria-label]="'Estado: ' + s.estado">
             {{ s.estado }}
           </span>
         </div>

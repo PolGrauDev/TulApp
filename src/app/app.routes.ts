@@ -18,7 +18,13 @@ export const routes: Routes = [
         (m) => m.CategoriaVecinosPage
       ),
   },
-  { path: 'nueva-solicitud', redirectTo: 'tabs', pathMatch: 'full' },
+  {
+    path: 'nueva-solicitud',
+    loadComponent: () =>
+      import('./pages/nueva-solicitud/nueva-solicitud.page').then(
+        (m) => m.NuevaSolicitudPage
+      ),
+  },
   { path: 'historial-recados', redirectTo: 'tabs/perfil', pathMatch: 'full' },
   { path: 'configuracion', redirectTo: 'tabs/perfil', pathMatch: 'full' },
   { path: 'login', redirectTo: 'tabs', pathMatch: 'full' },

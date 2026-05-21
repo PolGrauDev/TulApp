@@ -1,7 +1,6 @@
 <ion-content class="cv-content" [fullscreen]="true">
   <div class="cv-container">
 
-    <!-- Cabecera -->
     <header class="cv-header">
       <button class="cv-back" (click)="volver()" aria-label="Volver a la página anterior">
         <ion-icon name="arrow-back-outline" aria-hidden="true"></ion-icon>
@@ -9,14 +8,9 @@
       <h1 class="cv-title">Tipo de apoyo</h1>
     </header>
 
-    <!-- Grid de categorías -->
     <section class="cv-grid" aria-label="Categorías de ayuda disponibles">
-      <button
-        *ngFor="let cat of categorias"
-        class="cv-card"
-        (click)="seleccionarCategoria(cat)"
-        [attr.aria-label]="'Solicitar ayuda con ' + cat.label"
-      >
+      <button *ngFor="let cat of categorias" class="cv-card" (click)="seleccionarCategoria(cat)"
+        [attr.aria-label]="'Solicitar ayuda con ' + cat.label">
         <div class="cv-card__icon" [attr.aria-hidden]="true">
           <ion-icon [name]="cat.icon"></ion-icon>
         </div>
@@ -24,7 +18,6 @@
       </button>
     </section>
 
-    <!-- Botón teléfono -->
     <footer class="cv-footer">
       <app-btn-telefono ariaLabel="Llamar para pedir ayuda por teléfono"></app-btn-telefono>
     </footer>

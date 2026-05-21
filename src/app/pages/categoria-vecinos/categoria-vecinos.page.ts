@@ -30,12 +30,12 @@ export interface Categoria {
 export class CategoriaVecinosPage {
 
   categorias: Categoria[] = [
-    { id: 'compras',   label: 'Compras',   icon: 'cart-outline' },
+    { id: 'compras', label: 'Compras', icon: 'cart-outline' },
     { id: 'medicinas', label: 'Medicinas', icon: 'medkit-outline' },
-    { id: 'compania',  label: 'Compañía',  icon: 'people-outline' },
-    { id: 'tramites',  label: 'Trámites',  icon: 'document-text-outline' },
+    { id: 'compania', label: 'Compañía', icon: 'people-outline' },
+    { id: 'tramites', label: 'Trámites', icon: 'document-text-outline' },
     { id: 'traslados', label: 'Traslados', icon: 'car-outline' },
-    { id: 'otros',     label: 'Otros',     icon: 'ellipsis-horizontal-circle-outline' },
+    { id: 'otros', label: 'Otros', icon: 'ellipsis-horizontal-circle-outline' },
   ];
 
   constructor(private router: Router) {
@@ -51,7 +51,6 @@ export class CategoriaVecinosPage {
   }
 
   seleccionarCategoria(cat: Categoria): void {
-    // TODO: navegar al formulario de solicitud con la categoría seleccionada
     this.router.navigate(['/nueva-solicitud'], { queryParams: { categoria: cat.id } });
   }
 

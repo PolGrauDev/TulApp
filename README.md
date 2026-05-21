@@ -1,4 +1,4 @@
-# TulApp — Sprint 1
+# TulApp
 
 > **T**ender **U**n **L**azo **A**ctivo · Plataforma de apoyo solidario intergeneracional
 

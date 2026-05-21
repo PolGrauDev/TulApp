@@ -23,6 +23,10 @@ export const volunteerTabsRoutes: Routes = [
         loadComponent: () => import('../pages/informacion-personal/informacion-personal.page').then(m => m.InformacionPersonalPage),
       },
       {
+        path: 'recado-detalle',
+        loadComponent: () => import('../pages/recado-detalle/recado-detalle.page').then(m => m.RecadoDetallePage),
+      },
+      {
         path: '',
         redirectTo: 'home',
         pathMatch: 'full',

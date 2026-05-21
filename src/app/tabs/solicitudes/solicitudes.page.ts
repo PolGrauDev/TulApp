@@ -1,4 +1,4 @@
-import { Component, computed, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import {
@@ -42,44 +42,11 @@ export class SolicitudesPage {
 
   tabActivo: TabSolicitud = 'en-curso';
 
-  // Datos de ejemplo — sustituir por llamada al servicio real
   private readonly todasSolicitudes: Solicitud[] = [
-    {
-      id: '1',
-      tipo: 'Compra',
-      icon: 'cart-outline',
-      fecha: 'Hoy • 16:00',
-      estado: 'EN CAMINO',
-      estadoKey: 'en-camino',
-      tab: 'en-curso',
-    },
-    {
-      id: '2',
-      tipo: 'Trámites',
-      icon: 'document-text-outline',
-      fecha: 'Hoy • 18:00',
-      estado: 'ASIGNADO',
-      estadoKey: 'asignado',
-      tab: 'en-curso',
-    },
-    {
-      id: '3',
-      tipo: 'Medicinas',
-      icon: 'medkit-outline',
-      fecha: 'Mañana • 10:00',
-      estado: 'PENDIENTE',
-      estadoKey: 'pendiente',
-      tab: 'pendientes',
-    },
-    {
-      id: '4',
-      tipo: 'Compañía',
-      icon: 'people-outline',
-      fecha: 'Mañana • 17:00',
-      estado: 'PENDIENTE',
-      estadoKey: 'pendiente',
-      tab: 'pendientes',
-    },
+    { id: '1', tipo: 'Compra', icon: 'cart-outline', fecha: 'Hoy • 16:00', estado: 'EN CAMINO', estadoKey: 'en-camino', tab: 'en-curso' },
+    { id: '2', tipo: 'Trámites', icon: 'document-text-outline', fecha: 'Hoy • 18:00', estado: 'ASIGNADO', estadoKey: 'asignado', tab: 'en-curso' },
+    { id: '3', tipo: 'Medicinas', icon: 'medkit-outline', fecha: 'Mañana • 10:00', estado: 'PENDIENTE', estadoKey: 'pendiente', tab: 'pendientes' },
+    { id: '4', tipo: 'Compañía', icon: 'people-outline', fecha: 'Mañana • 17:00', estado: 'PENDIENTE', estadoKey: 'pendiente', tab: 'pendientes' },
   ];
 
   get solicitudesFiltradas(): Solicitud[] {
@@ -87,22 +54,10 @@ export class SolicitudesPage {
   }
 
   constructor(private router: Router) {
-    addIcons({
-      arrowBackOutline,
-      cartOutline,
-      documentTextOutline,
-      medkitOutline,
-      peopleOutline,
-      carOutline,
-      clipboardOutline,
-    });
+    addIcons({ arrowBackOutline, cartOutline, documentTextOutline, medkitOutline, peopleOutline, carOutline, clipboardOutline });
   }
 
   cambiarTab(tab: TabSolicitud): void {
     this.tabActivo = tab;
-  }
-
-  volver(): void {
-    this.router.navigate(['/tabs/inicio']);
   }
 }

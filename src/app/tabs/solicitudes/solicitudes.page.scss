@@ -20,36 +20,18 @@
 
   &__inner {
     display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 12px var(--tula-spacing-lg, 20px) 8px;
+    align-items: flex-end;
+    padding: 48px var(--tula-spacing-lg, 20px) 14px;
+    border-bottom: 1px solid var(--tula-border, #C8BFA8);
   }
 }
 
-.sol-back {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  background: none;
-  border: none;
-  color: var(--tula-text-primary, #1a1a0e);
-  cursor: pointer;
-  border-radius: 8px;
-  transition: background-color 0.2s;
-
-  ion-icon { font-size: 1.4rem; }
-
-  &:hover { background-color: rgba(0,0,0,0.06); }
-}
-
 .sol-toolbar__title {
-  font-family: var(--tula-font-body);
-  font-size: 0.8rem;
+  font-family: var(--tula-font-display);
+  font-size: var(--tula-text-lg, 1.5rem);
   font-weight: 700;
-  letter-spacing: 0.12em;
-  color: var(--tula-primary, #3a6b35);
+  letter-spacing: 0.04em;
+  color: var(--tula-primary, #2E7D32);
   text-transform: uppercase;
 }
 
@@ -61,7 +43,7 @@
 .sol-container {
   display: flex;
   flex-direction: column;
-  padding: var(--tula-spacing-lg, 20px);
+  padding: var(--tula-spacing-xl, 32px) var(--tula-spacing-lg, 20px) var(--tula-spacing-lg, 20px);
   gap: var(--tula-spacing-lg, 20px);
 }
 
@@ -72,63 +54,70 @@
   border-radius: var(--tula-radius-lg, 16px);
   padding: 4px;
   gap: 4px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
 .sol-segment__btn {
   flex: 1;
-  padding: 10px 16px;
+  padding: 14px 20px;
   background: none;
   border: none;
   border-radius: 12px;
   font-family: var(--tula-font-body);
-  font-size: var(--tula-text-base, 1rem);
-  font-weight: 600;
+  font-size: var(--tula-text-base, 1.25rem); // más pequeño
+  font-weight: 700;
   color: var(--tula-text-muted, #9e9e8e);
   cursor: pointer;
   transition: background-color 0.2s ease, color 0.2s ease;
+  white-space: nowrap; // evita que el texto se corte
 
   &--active {
-    background-color: var(--tula-primary, #3a6b35);
+    background-color: var(--tula-primary, #2E7D32);
     color: var(--tula-on-primary, #ffffff);
-    box-shadow: 0 2px 8px rgba(58, 107, 53, 0.3);
+    box-shadow: 0 4px 20px rgba(46, 125, 50, 0.3);
   }
 
   &:focus-visible {
-    outline: 3px solid var(--tula-focus-ring, #3a6b35);
+    outline: 3px solid var(--tula-focus-ring);
     outline-offset: 2px;
   }
 }
+
 
 // Lista
 .sol-list {
   display: flex;
   flex-direction: column;
-  gap: var(--tula-spacing-md, 12px);
+  gap: var(--tula-spacing-md, 16px);
 }
 
-// Tarjeta de solicitud
+// Tarjeta de solicitud — mismo estilo que botones de inicio
 .sol-card {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: var(--tula-spacing-md, 16px);
   background-color: var(--tula-surface, #ffffff);
-  border-radius: var(--tula-radius-lg, 16px);
-  padding: 16px 18px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  border-radius: var(--tula-radius-lg, 20px);
+  padding: 20px 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.2s ease, transform 0.15s ease;
+
+  &:active {
+    transform: scale(0.98);
+  }
 
   &__icon-wrap {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 48px;
-    height: 48px;
-    background-color: rgba(220, 100, 60, 0.1);
+    width: 56px;
+    height: 56px;
+    background-color: rgba(220, 100, 60, 0.12);
     border-radius: 50%;
     flex-shrink: 0;
 
     ion-icon {
-      font-size: 1.4rem;
+      font-size: 1.8rem;
       color: #D95F2B;
     }
   }
@@ -136,31 +125,36 @@
   &__info {
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 4px;
     flex: 1;
     min-width: 0;
+    overflow: hidden; // evita desbordamiento
   }
 
   &__tipo {
     font-family: var(--tula-font-body);
-    font-size: var(--tula-text-base, 1rem);
+    font-size: var(--tula-text-lg, 1.5rem);
     font-weight: 700;
-    color: var(--tula-text-primary, #1a1a0e);
+    color: var(--tula-text-primary, #1a1a1a);
+    line-height: 1.2;
+    white-space: nowrap; // una sola línea
+    overflow: hidden;
+    text-overflow: ellipsis; // "..." si no cabe
   }
 
   &__fecha {
     font-family: var(--tula-font-body);
-    font-size: 0.8rem;
-    color: var(--tula-text-muted, #9e9e8e);
+    font-size: var(--tula-text-base, 1.25rem);
+    color: var(--tula-text-muted, #5a5246);
+    white-space: nowrap;
   }
 
-  // Badges de estado
   &__badge {
     font-family: var(--tula-font-body);
-    font-size: 0.7rem;
+    font-size: 0.85rem;
     font-weight: 700;
     letter-spacing: 0.05em;
-    padding: 4px 10px;
+    padding: 6px 14px;
     border-radius: 20px;
     white-space: nowrap;
     flex-shrink: 0;
@@ -193,19 +187,19 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  padding: 48px 24px;
+  gap: 16px;
+  padding: 64px 24px;
   color: var(--tula-text-muted, #9e9e8e);
   text-align: center;
 
   ion-icon {
-    font-size: 3rem;
+    font-size: 4rem;
     opacity: 0.4;
   }
 
   p {
     font-family: var(--tula-font-body);
-    font-size: var(--tula-text-base, 1rem);
+    font-size: var(--tula-text-lg, 1.5rem);
     margin: 0;
   }
 }

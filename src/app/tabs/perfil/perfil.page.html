@@ -1,9 +1,6 @@
 <ion-header class="pf-header ion-no-border">
   <ion-toolbar class="pf-toolbar">
     <div class="pf-toolbar__inner">
-      <button class="pf-back" (click)="volver()" aria-label="Volver">
-        <ion-icon name="arrow-back-outline" aria-hidden="true"></ion-icon>
-      </button>
       <span class="pf-toolbar__title">MI PERFIL</span>
     </div>
   </ion-toolbar>
@@ -12,7 +9,6 @@
 <ion-content class="pf-content" [fullscreen]="true">
   <div class="pf-container">
 
-    <!-- Avatar y nombre -->
     <section class="pf-hero" aria-label="Información del usuario">
       <div class="pf-avatar" aria-hidden="true">
         <ion-icon name="person-outline"></ion-icon>
@@ -21,14 +17,8 @@
       <span class="pf-badge">Vecina de confianza</span>
     </section>
 
-    <!-- Opciones de menú -->
     <section class="pf-menu" aria-label="Opciones de perfil">
-
-      <button
-        class="pf-menu-item"
-        (click)="irHistorial()"
-        aria-label="Ver historial de recados"
-      >
+      <button class="pf-menu-item" (click)="irHistorial()" aria-label="Ver historial de recados">
         <div class="pf-menu-item__icon-wrap">
           <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
         </div>
@@ -36,11 +26,7 @@
         <ion-icon name="chevron-forward-outline" class="pf-menu-item__arrow" aria-hidden="true"></ion-icon>
       </button>
 
-      <button
-        class="pf-menu-item"
-        (click)="irConfiguracion()"
-        aria-label="Abrir configuración"
-      >
+      <button class="pf-menu-item" (click)="irConfiguracion()" aria-label="Abrir configuración">
         <div class="pf-menu-item__icon-wrap">
           <ion-icon name="settings-outline" aria-hidden="true"></ion-icon>
         </div>
@@ -48,20 +34,14 @@
         <ion-icon name="chevron-forward-outline" class="pf-menu-item__arrow" aria-hidden="true"></ion-icon>
       </button>
 
-      <button
-        class="pf-menu-item pf-menu-item--danger"
-        (click)="cerrarSesion()"
-        aria-label="Cerrar sesión"
-      >
+      <button class="pf-menu-item pf-menu-item--danger" (click)="cerrarSesion()" aria-label="Cerrar sesión">
         <div class="pf-menu-item__icon-wrap pf-menu-item__icon-wrap--danger">
           <ion-icon name="log-out-outline" aria-hidden="true"></ion-icon>
         </div>
         <span class="pf-menu-item__label pf-menu-item__label--danger">Cerrar sesión</span>
       </button>
-
     </section>
 
     <p class="pf-version" aria-label="Versión de la aplicación">TULAPP V1.0.2</p>
-
   </div>
 </ion-content>

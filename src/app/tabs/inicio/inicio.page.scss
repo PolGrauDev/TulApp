@@ -1,0 +1,140 @@
+// ============================================================
+// inicio-vecinos.page.scss
+// Diseño basado en la imagen de referencia:
+//   - Fondo crema cálido
+//   - Botón primario verde con ícono circular
+//   - Botón secundario blanco con ícono de teléfono naranja
+// ============================================================
+
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.iv-content {
+  --background: var(--tula-bg);
+  height: 100%;
+}
+
+// Contenedor principal
+.iv-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding: 100px var(--tula-spacing-lg) var(--tula-spacing-xl);
+  gap: var(--tula-spacing-lg);
+}
+
+// Header
+.iv-header-bar {
+  --background: var(--tula-bg);
+}
+
+.iv-toolbar {
+  --background: var(--tula-bg);
+  --border-width: 0;
+
+  &__inner {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 48px var(--tula-spacing-lg, 20px) 14px;
+    border-bottom: 1px solid var(--tula-border, #C8BFA8);
+  }
+}
+
+.iv-toolbar__title {
+  font-family: var(--tula-font-display);
+  font-size: var(--tula-text-lg, 1.5rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--tula-primary, #2E7D32);
+  text-transform: uppercase;
+}
+
+// Cabecera con saludo
+.iv-header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.iv-greeting {
+  font-family: var(--tula-font-display);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--tula-text-primary);
+  margin: 0;
+  line-height: 1.15;
+}
+
+.iv-subtitle {
+  font-family: var(--tula-font-body);
+  font-size: var(--tula-text-base);
+  color: var(--tula-text-muted);
+  margin: 0;
+}
+
+// Botón principal
+.iv-main-action {
+  width: 100%;
+}
+
+.iv-btn-primary {
+  display: flex;
+  align-items: center;
+  gap: var(--tula-spacing-md, 16px);
+  width: 100%;
+  padding: 20px 24px;
+  background-color: var(--tula-primary);
+  color: var(--tula-on-primary);
+  border: none;
+  border-radius: var(--tula-radius-lg);
+  font-family: var(--tula-font-body);
+  font-size: var(--tula-text-xl);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  text-align: left;
+
+  .iv-btn-icon-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+    flex-shrink: 0;
+
+    ion-icon {
+      font-size: 1.6rem;
+      color: var(--tula-on-primary);
+    }
+  }
+
+  span {
+    line-height: 1.2;
+  }
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--tula-primary-dark);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.22);
+    outline: 3px solid var(--tula-focus-ring);
+    outline-offset: 3px;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+// Botón secundario (contenedor)
+.iv-secondary-action {
+  width: 100%;
+}

@@ -19,36 +19,18 @@
 
   &__inner {
     display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 12px var(--tula-spacing-lg, 20px) 8px;
+    align-items: flex-end;
+    padding: 48px var(--tula-spacing-lg, 20px) 14px;
+    border-bottom: 1px solid var(--tula-border, #C8BFA8);
   }
 }
 
-.pf-back {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  background: none;
-  border: none;
-  color: var(--tula-text-primary, #1a1a0e);
-  cursor: pointer;
-  border-radius: 8px;
-  transition: background-color 0.2s;
-
-  ion-icon { font-size: 1.4rem; }
-
-  &:hover { background-color: rgba(0,0,0,0.06); }
-}
-
 .pf-toolbar__title {
-  font-family: var(--tula-font-body);
-  font-size: 0.8rem;
+  font-family: var(--tula-font-display);
+  font-size: var(--tula-text-lg, 1.5rem);
   font-weight: 700;
-  letter-spacing: 0.12em;
-  color: var(--tula-primary, #3a6b35);
+  letter-spacing: 0.04em;
+  color: var(--tula-primary, #2E7D32);
   text-transform: uppercase;
 }
 
@@ -70,75 +52,78 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
 .pf-avatar {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 96px;
-  height: 96px;
+  width: 120px;
+  height: 120px;
   background-color: var(--tula-primary-light, #e8f0e6);
   border-radius: 50%;
 
   ion-icon {
-    font-size: 3rem;
-    color: var(--tula-primary, #3a6b35);
+    font-size: 4rem;
+    color: var(--tula-primary, #2E7D32);
   }
 }
 
 .pf-nombre {
   font-family: var(--tula-font-display);
-  font-size: 1.5rem;
+  font-size: var(--tula-text-xl, 1.75rem);
   font-weight: 700;
-  color: var(--tula-text-primary, #1a1a0e);
+  color: var(--tula-text-primary, #1a1a1a);
   margin: 0;
   text-align: center;
 }
 
 .pf-badge {
   font-family: var(--tula-font-body);
-  font-size: 0.9rem;
+  font-size: var(--tula-text-base, 1.25rem);
   font-weight: 600;
-  color: var(--tula-primary, #3a6b35);
+  color: var(--tula-primary, #2E7D32);
 }
 
-// Menú de opciones
+// Menú de opciones — mismo estilo que botones de inicio
 .pf-menu {
   display: flex;
   flex-direction: column;
-  gap: var(--tula-spacing-md, 12px);
+  gap: var(--tula-spacing-md, 16px);
   width: 100%;
 }
 
 .pf-menu-item {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: var(--tula-spacing-md, 16px);
   width: 100%;
-  padding: 18px 20px;
+  padding: 20px 24px;
   background-color: var(--tula-surface, #ffffff);
   border: none;
-  border-radius: var(--tula-radius-lg, 16px);
+  border-radius: var(--tula-radius-lg, 20px);
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
   text-align: left;
 
   &:hover,
   &:focus-visible {
     background-color: #f8f8f8;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.1);
-    outline: 3px solid var(--tula-focus-ring, #3a6b35);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.22);
+    outline: 3px solid var(--tula-focus-ring);
     outline-offset: 3px;
+  }
+
+  &:active {
+    transform: scale(0.98);
   }
 
   &--danger {
     &:hover,
     &:focus-visible {
       background-color: #fff5f5;
-      box-shadow: 0 4px 14px rgba(220, 60, 60, 0.1);
       outline-color: #e53935;
     }
   }
@@ -147,15 +132,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 44px;
-    height: 44px;
+    width: 56px;
+    height: 56px;
+    background-color: rgba(255, 255, 255, 0.25);
     background-color: var(--tula-primary-light, #e8f0e6);
-    border-radius: 12px;
+    border-radius: 50%;
     flex-shrink: 0;
 
     ion-icon {
-      font-size: 1.3rem;
-      color: var(--tula-primary, #3a6b35);
+      font-size: 1.8rem;
+      color: var(--tula-primary, #2E7D32);
     }
 
     &--danger {
@@ -170,9 +156,10 @@
   &__label {
     flex: 1;
     font-family: var(--tula-font-body);
-    font-size: var(--tula-text-base, 1rem);
-    font-weight: 600;
-    color: var(--tula-text-primary, #1a1a0e);
+    font-size: var(--tula-text-xl, 1.75rem);
+    font-weight: 700;
+    color: var(--tula-text-primary, #1a1a1a);
+    line-height: 1.2;
 
     &--danger {
       color: #e53935;
@@ -180,8 +167,8 @@
   }
 
   &__arrow {
-    font-size: 1.1rem;
-    color: var(--tula-text-muted, #9e9e8e);
+    font-size: 1.4rem;
+    color: var(--tula-text-muted, #5a5246);
     flex-shrink: 0;
   }
 }
@@ -189,7 +176,7 @@
 // Versión
 .pf-version {
   font-family: var(--tula-font-body);
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   color: var(--tula-text-muted, #9e9e8e);
   letter-spacing: 0.08em;
   margin: 0;

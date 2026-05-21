@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { routes as tabRoutes } from './tabs/tabs.routes';
 
 export const routes: Routes = [
   {
@@ -8,8 +9,7 @@ export const routes: Routes = [
   },
   {
     path: 'tabs',
-    loadChildren: () =>
-      import('./tabs/tabs.routes').then((m) => m.routes),
+    children: tabRoutes,
   },
   {
     path: 'categoria-vecinos',
@@ -18,7 +18,6 @@ export const routes: Routes = [
         (m) => m.CategoriaVecinosPage
       ),
   },
-  // Rutas placeholder — implementar cuando estén listas
   { path: 'nueva-solicitud', redirectTo: 'tabs', pathMatch: 'full' },
   { path: 'historial-recados', redirectTo: 'tabs/perfil', pathMatch: 'full' },
   { path: 'configuracion', redirectTo: 'tabs/perfil', pathMatch: 'full' },

@@ -25,36 +25,21 @@ import {
 })
 export class PerfilPage {
 
-  // Sustituir por el usuario autenticado real
   nombreUsuario: string = 'Carmen García';
 
   constructor(private router: Router) {
-    addIcons({
-      arrowBackOutline,
-      personOutline,
-      timeOutline,
-      settingsOutline,
-      logOutOutline,
-      chevronForwardOutline,
-    });
+    addIcons({ arrowBackOutline, personOutline, timeOutline, settingsOutline, logOutOutline, chevronForwardOutline });
   }
 
   irHistorial(): void {
-    // TODO: navegar a la página de historial de recados
     this.router.navigate(['/historial-recados']);
   }
 
   irConfiguracion(): void {
-    // TODO: navegar a la página de configuración
     this.router.navigate(['/configuracion']);
   }
 
   cerrarSesion(): void {
-    // TODO: limpiar sesión y redirigir al login
     this.router.navigate(['/login']);
-  }
-
-  volver(): void {
-    this.router.navigate(['/tabs/inicio']);
   }
 }

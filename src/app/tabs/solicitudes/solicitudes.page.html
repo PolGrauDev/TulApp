@@ -1,9 +1,6 @@
 <ion-header class="sol-header ion-no-border">
   <ion-toolbar class="sol-toolbar">
     <div class="sol-toolbar__inner">
-      <button class="sol-back" (click)="volver()" aria-label="Volver">
-        <ion-icon name="arrow-back-outline" aria-hidden="true"></ion-icon>
-      </button>
       <span class="sol-toolbar__title">SOLICITUDES</span>
     </div>
   </ion-toolbar>
@@ -12,7 +9,6 @@
 <ion-content class="sol-content" [fullscreen]="true">
   <div class="sol-container">
 
-    <!-- Segmento En curso / Pendientes -->
     <div class="sol-segment" role="tablist" aria-label="Filtro de solicitudes">
       <button
         class="sol-segment__btn"
@@ -34,7 +30,6 @@
       </button>
     </div>
 
-    <!-- Lista de solicitudes -->
     <section class="sol-list" aria-label="Listado de solicitudes">
 
       <ng-container *ngIf="solicitudesFiltradas.length > 0; else sinSolicitudes">
@@ -47,12 +42,10 @@
           <div class="sol-card__icon-wrap">
             <ion-icon [name]="s.icon" aria-hidden="true"></ion-icon>
           </div>
-
           <div class="sol-card__info">
             <span class="sol-card__tipo">{{ s.tipo }}</span>
             <span class="sol-card__fecha">{{ s.fecha }}</span>
           </div>
-
           <span
             class="sol-card__badge"
             [ngClass]="'sol-card__badge--' + s.estadoKey"
@@ -71,6 +64,5 @@
       </ng-template>
 
     </section>
-
   </div>
 </ion-content>

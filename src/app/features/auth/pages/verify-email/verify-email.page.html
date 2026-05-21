@@ -1,0 +1,43 @@
+<ion-content class="verify-content">
+  <div class="page-wrapper">
+
+    <div class="brand-section">
+      <div class="logo-square">T</div>
+      <h1 class="app-name">TulApp</h1>
+    </div>
+
+    <div class="card">
+      <div class="icon-wrap">
+        <ion-icon name="mail-outline" class="mail-icon"></ion-icon>
+      </div>
+
+      <h2 class="title">Verifica tu correo</h2>
+      <p class="subtitle">
+        Hemos enviado un enlace de verificación a
+      </p>
+      <p class="email">{{ email }}</p>
+      <p class="hint">
+        Revisa tu bandeja de entrada (y la carpeta de spam) y haz clic en el enlace para activar tu cuenta.
+      </p>
+
+      <button class="primary-btn" (click)="goToLogin()">
+        <ion-icon name="checkmark-circle-outline"></ion-icon>
+        Ya verifiqué mi correo
+      </button>
+
+      <button class="resend-btn" (click)="resend()" [disabled]="resending || resent">
+        @if (resending) {
+          <ion-spinner name="crescent" class="btn-spinner"></ion-spinner>
+        } @else if (resent) {
+          ✓ Correo reenviado
+        } @else {
+          <ion-icon name="refresh-outline"></ion-icon>
+          Reenviar correo
+        }
+      </button>
+    </div>
+
+    <p class="footer-text">Tus datos están protegidos · Nunca compartimos tu información</p>
+
+  </div>
+</ion-content>

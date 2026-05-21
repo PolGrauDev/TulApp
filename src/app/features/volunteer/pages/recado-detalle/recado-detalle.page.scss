@@ -1,0 +1,311 @@
+ion-toolbar {
+  --background: #ffffff;
+  --color: #1A1A1A;
+  --padding-start: 8px;
+  --padding-end: 16px;
+
+  ion-title {
+    font-size: 18px;
+    font-weight: 800;
+    text-align: center;
+  }
+}
+
+.back-btn {
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  cursor: pointer;
+
+  ion-icon {
+    font-size: 22px;
+    color: #1A1A1A;
+  }
+}
+
+.notif-icon {
+  font-size: 24px;
+  color: #1A1A1A;
+  margin-right: 4px;
+}
+
+.detalle-content {
+  --background: #F5F5F5;
+}
+
+// --- Perfil del vecino ---
+.profile-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #ffffff;
+  margin: 16px 16px 0;
+  border-radius: 18px;
+  padding: 16px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.avatar {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #E8F5E9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  ion-icon {
+    font-size: 40px;
+    color: #2E7D32;
+  }
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.profile-name {
+  font-size: 18px;
+  font-weight: 800;
+  color: #1A1A1A;
+}
+
+.profile-distance {
+  font-size: 13px;
+  color: #6B6B6B;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  ion-icon {
+    font-size: 14px;
+    color: #2E7D32;
+  }
+}
+
+// --- Botones de acción ---
+.action-btns {
+  display: flex;
+  gap: 12px;
+  margin: 12px 16px 0;
+}
+
+.btn-call {
+  flex: 1;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #ffffff;
+  border: 1.5px solid #CCCCCC;
+  border-radius: 50px;
+  color: #1A1A1A;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+
+  ion-icon { font-size: 18px; }
+
+  &:active { background: #F0F0F0; }
+}
+
+.btn-message {
+  flex: 1;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #1B3A2D;
+  border: none;
+  border-radius: 50px;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+
+  ion-icon { font-size: 18px; }
+
+  &:active { background: #2D5016; }
+}
+
+// --- Detalle del recado ---
+.recado-info {
+  background: #ffffff;
+  margin: 12px 16px 0;
+  border-radius: 18px;
+  padding: 16px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.recado-title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.recado-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: #1A1A1A;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.date-badge {
+  font-size: 11px;
+  font-weight: 700;
+  color: #C0392B;
+  background: #FDECEA;
+  border-radius: 10px;
+  padding: 6px 10px;
+  text-align: center;
+  line-height: 1.4;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.recado-desc {
+  font-size: 14px;
+  color: #4A4A4A;
+  line-height: 1.6;
+  margin: 0 0 14px;
+}
+
+.location-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.location-icon {
+  font-size: 18px;
+  color: #2E7D32;
+  flex-shrink: 0;
+}
+
+.location-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: #2E7D32;
+  text-decoration: underline;
+}
+
+// --- Mapa ---
+.map-section {
+  margin: 12px 16px 100px;
+}
+
+.map-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #1A1A1A;
+  margin: 0 0 10px;
+}
+
+.map-placeholder {
+  height: 180px;
+  background: #E4EEDF;
+  border-radius: 18px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+
+  // Simula líneas de calles
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: #ffffff;
+    transform: translateY(-50%);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 40%;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: #ffffff;
+  }
+}
+
+.map-route-line {
+  position: absolute;
+  top: 30%;
+  left: 20%;
+  width: 50%;
+  height: 3px;
+  background: #1B3A2D;
+  border-radius: 4px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -8px;
+    width: 3px;
+    height: 20px;
+    background: #1B3A2D;
+    border-radius: 4px;
+  }
+}
+
+.map-pin {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 3px solid #ffffff;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+}
+
+.map-pin--start {
+  background: #1B3A2D;
+  top: calc(30% - 5px);
+  left: 20%;
+}
+
+.map-pin--end {
+  background: #C0392B;
+  top: calc(10% - 5px);
+  left: 70%;
+}
+
+// --- Botón inferior fijo ---
+.footer-btn-wrap {
+  position: fixed;
+  bottom: 56px;
+  left: 0;
+  right: 0;
+  padding: 12px 16px;
+  background: transparent;
+}
+
+.btn-completar {
+  display: block;
+  width: 100%;
+  height: 52px;
+  background: #1B3A2D;
+  border: none;
+  border-radius: 16px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+
+  &:active { background: #2D5016; }
+}

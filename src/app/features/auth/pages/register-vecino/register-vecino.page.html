@@ -1,0 +1,151 @@
+<ion-content [fullscreen]="true" class="register-content">
+  <div class="page-wrapper">
+
+    <div class="brand-section">
+      <div class="logo-square">T</div>
+      <h1 class="app-name">TulApp</h1>
+      <p class="app-tagline">Siempre cerca de ti</p>
+    </div>
+
+    <div class="form-card">
+      <h2 class="form-title">Registro como Vecino</h2>
+      <p class="form-subtitle">Rellena tus datos para registrarte</p>
+
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+        <div class="field">
+          <span class="field-label">NOMBRE</span>
+          <ion-input
+            type="text"
+            formControlName="nombre"
+            placeholder="Tu nombre"
+            autocomplete="given-name"
+            [class.input-error]="showError('nombre')">
+          </ion-input>
+          @if (showError('nombre')) {
+            <span class="field-error">El nombre es obligatorio</span>
+          }
+        </div>
+
+        <div class="field">
+          <span class="field-label">APELLIDOS</span>
+          <ion-input
+            type="text"
+            formControlName="apellidos"
+            placeholder="Tus apellidos"
+            autocomplete="family-name"
+            [class.input-error]="showError('apellidos')">
+          </ion-input>
+          @if (showError('apellidos')) {
+            <span class="field-error">Los apellidos son obligatorios</span>
+          }
+        </div>
+
+        <div class="field">
+          <span class="field-label">EMAIL <span class="field-optional">(opcional)</span></span>
+          <ion-input
+            type="email"
+            formControlName="email"
+            placeholder="tu@email.com"
+            autocomplete="email"
+            [class.input-error]="showError('email')">
+          </ion-input>
+          @if (showError('email')) {
+            <span class="field-error">Introduce un email válido</span>
+          }
+        </div>
+
+        <div class="field">
+          <span class="field-label">TELÉFONO</span>
+          <ion-input
+            type="tel"
+            formControlName="telefono"
+            placeholder="612 345 678"
+            autocomplete="tel"
+            [class.input-error]="showError('telefono')">
+          </ion-input>
+          @if (showError('telefono')) {
+            <span class="field-error">
+              @if (telefono?.errors?.['required']) { El teléfono es obligatorio }
+              @else { Introduce un teléfono válido }
+            </span>
+          }
+        </div>
+
+        <div class="field">
+          <span class="field-label">DIRECCIÓN</span>
+          <ion-input
+            type="text"
+            formControlName="direccion"
+            placeholder="Tu dirección completa"
+            [class.input-error]="showError('direccion')">
+          </ion-input>
+          @if (showError('direccion')) {
+            <span class="field-error">La dirección es obligatoria</span>
+          }
+        </div>
+
+        <div class="field">
+          <span class="field-label">CONTRASEÑA</span>
+          <ion-input
+            type="password"
+            formControlName="password"
+            placeholder="Mínimo 8 caracteres"
+            autocomplete="new-password"
+            [class.input-error]="showError('password')">
+          </ion-input>
+          @if (showError('password')) {
+            <span class="field-error">
+              @if (password?.errors?.['required']) { La contraseña es obligatoria }
+              @else { Mínimo 8 caracteres }
+            </span>
+          }
+        </div>
+
+        <div class="field">
+          <span class="field-label">CONFIRMAR CONTRASEÑA</span>
+          <ion-input
+            type="password"
+            formControlName="confirmPassword"
+            placeholder="Repite la contraseña"
+            [class.input-error]="showPasswordMismatch">
+          </ion-input>
+          @if (showPasswordMismatch) {
+            <span class="field-error">Las contraseñas no coinciden</span>
+          }
+        </div>
+
+        @if (error) {
+          <div class="error-message">
+            <ion-text color="danger">{{ error }}</ion-text>
+          </div>
+        }
+
+        <div class="terms-row" [class.terms-error]="submitted && form.get('terms')?.invalid">
+          <ion-checkbox formControlName="terms" class="terms-check"></ion-checkbox>
+          <span class="terms-text">Acepto los <a class="terms-link">términos y condiciones</a></span>
+        </div>
+
+        <ion-button expand="block" type="submit" [disabled]="loading" class="submit-btn">
+          @if (loading) {
+            <ion-spinner name="crescent"></ion-spinner>
+          } @else {
+            CREAR CUENTA
+          }
+        </ion-button>
+
+      </form>
+
+      <div class="divider"></div>
+      <div class="bottom-link">
+        ¿Ya tienes cuenta? <a routerLink="/auth/login">Inicia sesión →</a>
+      </div>
+      <div class="bottom-link">
+        ¿Quieres ser voluntario? <a routerLink="/auth/register-voluntario">Regístrate aquí →</a>
+      </div>
+    </div>
+
+    <p class="footer-text">Tus datos están protegidos · Nunca compartimos tu información</p>
+
+  </div>
+</ion-content>

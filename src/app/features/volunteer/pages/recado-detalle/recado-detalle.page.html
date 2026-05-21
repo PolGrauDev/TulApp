@@ -1,0 +1,71 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <button class="back-btn" slot="start" (click)="goBack()">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </button>
+    <ion-title>TulApp</ion-title>
+    <ion-icon name="notifications-outline" slot="end" class="notif-icon"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="detalle-content">
+
+  <!-- Perfil del vecino -->
+  <div class="profile-card">
+    <div class="avatar">
+      <ion-icon name="person-circle-outline"></ion-icon>
+    </div>
+    <div class="profile-info">
+      <span class="profile-name">Juan P.</span>
+      <span class="profile-distance">
+        <ion-icon name="location-outline"></ion-icon>
+        A 456m de ti
+      </span>
+    </div>
+  </div>
+
+  <!-- Botones de acción -->
+  <div class="action-btns">
+    <button class="btn-call">
+      <ion-icon name="call-outline"></ion-icon>
+      Llamar
+    </button>
+    <button class="btn-message">
+      <ion-icon name="chatbubble-outline"></ion-icon>
+      Mensaje
+    </button>
+  </div>
+
+  <!-- Detalle del recado -->
+  <div class="recado-info">
+    <div class="recado-title-row">
+      <h2 class="recado-title">Recoger<br>medicina</h2>
+      <span class="date-badge">12 Oct -<br>19:39</span>
+    </div>
+
+    <p class="recado-desc">
+      Necesito que recojan mi receta en la Farmacia Central. Es para mi tratamiento de la tensión. La receta ya está pagada.
+    </p>
+
+    <div class="location-row">
+      <ion-icon name="location-outline" class="location-icon"></ion-icon>
+      <span class="location-text">Farmacia Central, Calle Mayor 12</span>
+    </div>
+  </div>
+
+  <!-- Mapa -->
+  <div class="map-section">
+    <h3 class="map-title">Ruta de entrega</h3>
+    <div class="map-placeholder">
+      <div class="map-route-line"></div>
+      <div class="map-pin map-pin--start"></div>
+      <div class="map-pin map-pin--end"></div>
+    </div>
+  </div>
+
+</ion-content>
+
+<!-- Botón fijo inferior -->
+<div class="footer-btn-wrap">
+  <button class="btn-completar">completar recado</button>
+</div>

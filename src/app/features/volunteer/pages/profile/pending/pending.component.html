@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/volunteer/profile" text="Perfil"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Recados pendientes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  @if (recados.length === 0) {
+    <div class="empty-state">
+      <p>No hay recados pendientes</p>
+    </div>
+  } @else {
+    <ion-list inset="true">
+      @for (recado of recados; track recado.id) {
+        <ion-item>
+          <ion-label>
+            <div class="recado-header">
+              <h2>{{ recado.titulo }}</h2>
+              <ion-badge [color]="urgenciaColor(recado.urgencia)">{{ recado.urgencia }}</ion-badge>
+            </div>
+            <p>{{ recado.descripcion }}</p>
+            <div class="recado-meta">
+              <ion-note>
+                <ion-icon name="location-outline"></ion-icon>
+                {{ recado.ubicacion }}
+              </ion-note>
+              <ion-note>
+                <ion-icon name="walk-outline"></ion-icon>
+                {{ recado.distancia }}
+              </ion-note>
+              <ion-note>
+                <ion-icon name="calendar-outline"></ion-icon>
+                {{ recado.fecha }}
+              </ion-note>
+            </div>
+          </ion-label>
+        </ion-item>
+      }
+    </ion-list>
+  }
+
+</ion-content>

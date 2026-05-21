@@ -1,0 +1,88 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="home-content">
+
+  <!-- Toggle disponibilidad -->
+  <div class="availability-card">
+    <div class="availability-left">
+      <ion-icon name="time-outline" class="avail-icon"></ion-icon>
+      <div>
+        <p class="avail-title">Available to help</p>
+        <p class="avail-sub">Neighbors can see you're active</p>
+      </div>
+    </div>
+    <ion-toggle [(ngModel)]="disponible" class="avail-toggle" [checked]="disponible"></ion-toggle>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats-row">
+    <div class="stat-card">
+      <span class="stat-number">12</span>
+      <span class="stat-label">NEIGHBORS HELPED</span>
+    </div>
+    <div class="stat-card stat-card--light">
+      <span class="stat-number">45</span>
+      <span class="stat-label">VOLUNTEER HOURS</span>
+    </div>
+  </div>
+
+  <!-- Active Tasks -->
+  <div class="section">
+    <div class="section-header">
+      <h3 class="section-title">My Active Tasks</h3>
+      <span class="badge">{{ activeTasks.length }} Task</span>
+    </div>
+
+    @for (task of activeTasks; track task.id) {
+      <div class="task-card">
+        <div class="task-top">
+          <div class="task-icon-wrap">
+            <ion-icon [name]="task.icon"></ion-icon>
+          </div>
+          <div class="task-info">
+            <p class="task-title">{{ task.title }}</p>
+            <p class="task-meta">{{ task.time }} · {{ task.location }}</p>
+          </div>
+        </div>
+        <button class="nav-btn">
+          <ion-icon name="navigate-outline"></ion-icon>
+          Start Navigation
+        </button>
+      </div>
+    }
+  </div>
+
+  <!-- Nearby Requests -->
+  <div class="section">
+    <h3 class="section-title">Nearby Requests</h3>
+
+    @for (req of nearbyRequests; track req.id) {
+      <div class="request-card">
+        <div class="request-top">
+          <div class="request-icon-wrap" [style.background]="req.iconColor + '1A'">
+            <ion-icon [name]="req.icon" [style.color]="req.iconColor"></ion-icon>
+          </div>
+          <div class="request-info">
+            <p class="request-title">{{ req.title }}</p>
+            <p class="request-meta">{{ req.distance }} · {{ req.urgency }}</p>
+          </div>
+          <span class="request-time">{{ req.timeAgo }}</span>
+        </div>
+        <button class="details-btn">
+          <ion-icon name="eye-outline"></ion-icon>
+          See details
+        </button>
+      </div>
+    }
+  </div>
+
+  <!-- Footer banner -->
+  <div class="footer-banner">
+    <p class="footer-text">Together we grow stronger.</p>
+  </div>
+
+</ion-content>

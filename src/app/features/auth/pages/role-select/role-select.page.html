@@ -1,0 +1,37 @@
+<ion-content [fullscreen]="true" class="role-select-content">
+  <div class="page-wrapper">
+
+    <div class="brand-section">
+      <div class="logo-square">T</div>
+      <h1 class="app-name">TulApp</h1>
+      <p class="app-tagline">Siempre cerca de ti</p>
+    </div>
+
+    <div class="selection-card">
+      <h2 class="form-title">¿Cómo quieres participar?</h2>
+      <p class="form-subtitle">Elige tu perfil para comenzar</p>
+
+      <div class="role-options">
+        <button class="role-btn" (click)="selectRole('vecino')">
+          <span class="role-icon">🏠</span>
+          <span class="role-name">Vecino</span>
+          <span class="role-desc">Solicita ayuda y conecta con tu barrio</span>
+        </button>
+
+        <button class="role-btn" (click)="selectRole('voluntario')">
+          <span class="role-icon">🤝</span>
+          <span class="role-name">Voluntario</span>
+          <span class="role-desc">Ofrece tu tiempo y ayuda a quien lo necesita</span>
+        </button>
+      </div>
+
+      <div class="divider"></div>
+      <div class="bottom-link">
+        ¿Ya tienes cuenta? <a routerLink="/auth/login">Inicia sesión →</a>
+      </div>
+    </div>
+
+    <p class="footer-text">Tus datos están protegidos · Nunca compartimos tu información</p>
+
+  </div>
+</ion-content>

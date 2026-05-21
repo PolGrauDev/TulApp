@@ -1,0 +1,97 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="perfil-content">
+
+  <!-- Avatar + nombre -->
+  <div class="profile-hero">
+    <div class="avatar">
+      <ion-icon name="person-outline" class="avatar-icon"></ion-icon>
+    </div>
+    @if (currentUser$ | async; as user) {
+      <p class="profile-email">{{ user.email }}</p>
+    }
+    <span class="role-badge">✓ Voluntario Activo</span>
+  </div>
+
+  <!-- Historial de Actividades -->
+  <div class="section">
+    <h3 class="section-title">Historial de Actividades</h3>
+    <div class="empty-card">
+      <p class="empty-text">Aún no tienes actividades completadas.</p>
+    </div>
+  </div>
+
+  <!-- Configuración de Cuenta -->
+  <div class="section">
+    <h3 class="section-title">Configuración de Cuenta</h3>
+    <div class="menu-card">
+
+      <button class="menu-item" routerLink="/volunteer-tabs/informacion-personal">
+        <div class="menu-icon-wrap">
+          <ion-icon name="person-outline"></ion-icon>
+        </div>
+        <div class="menu-text">
+          <span class="menu-label">Información Personal</span>
+          <span class="menu-sub">Nombre, Teléfono, Email</span>
+        </div>
+        <ion-icon name="chevron-forward-outline" class="menu-chevron"></ion-icon>
+      </button>
+
+      <div class="menu-divider"></div>
+
+      <button class="menu-item">
+        <div class="menu-icon-wrap">
+          <ion-icon name="location-outline"></ion-icon>
+        </div>
+        <div class="menu-text">
+          <span class="menu-label">Cambiar Dirección</span>
+          <span class="menu-sub">Tu domicilio actual</span>
+        </div>
+        <ion-icon name="chevron-forward-outline" class="menu-chevron"></ion-icon>
+      </button>
+
+      <div class="menu-divider"></div>
+
+      <button class="menu-item">
+        <div class="menu-icon-wrap">
+          <ion-icon name="notifications-outline"></ion-icon>
+        </div>
+        <div class="menu-text">
+          <span class="menu-label">Preferencias de Notificación</span>
+          <span class="menu-sub">Alertas de nuevas solicitudes</span>
+        </div>
+        <ion-icon name="chevron-forward-outline" class="menu-chevron"></ion-icon>
+      </button>
+
+    </div>
+  </div>
+
+  <!-- Soporte -->
+  <div class="section">
+    <div class="menu-card">
+      <button class="menu-item">
+        <div class="menu-icon-wrap">
+          <ion-icon name="help-circle-outline"></ion-icon>
+        </div>
+        <div class="menu-text">
+          <span class="menu-label">Centro de Ayuda</span>
+          <span class="menu-sub">Soporte y preguntas frecuentes</span>
+        </div>
+        <ion-icon name="chevron-forward-outline" class="menu-chevron"></ion-icon>
+      </button>
+    </div>
+  </div>
+
+  <!-- Cerrar sesión -->
+  <div class="logout-wrap">
+    <button class="logout-btn" (click)="logout()">
+      <ion-icon name="log-out-outline"></ion-icon>
+      Cerrar Sesión
+    </button>
+  </div>
+
+</ion-content>

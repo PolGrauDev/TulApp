@@ -1,0 +1,16 @@
+ion-list-header ion-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ion-color-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.save-btn {
+  --background: #E80000;
+  --background-activated: #C20000;
+  --border-radius: 12px;
+  --box-shadow: 0 4px 16px rgba(232, 0, 0, 0.3);
+  font-weight: 700;
+  height: 54px;
+}

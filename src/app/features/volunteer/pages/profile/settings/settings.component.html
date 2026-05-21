@@ -1,0 +1,117 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/volunteer/profile" text="Perfil"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Configuración</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]="form" (ngSubmit)="guardar()">
+
+    <!-- Datos personales -->
+    <ion-list inset="true">
+      <ion-list-header>
+        <ion-label>Datos personales</ion-label>
+      </ion-list-header>
+
+      <ion-item>
+        <ion-input
+          label="Nombre"
+          labelPlacement="stacked"
+          formControlName="nombre"
+          placeholder="Tu nombre completo">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-select
+          label="Idioma"
+          labelPlacement="stacked"
+          formControlName="idioma"
+          interface="popover">
+          <ion-select-option value="es">Español</ion-select-option>
+          <ion-select-option value="ca">Català</ion-select-option>
+          <ion-select-option value="gl">Galego</ion-select-option>
+          <ion-select-option value="eu">Euskara</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-input
+          label="Domicilio"
+          labelPlacement="stacked"
+          formControlName="domicilio"
+          placeholder="Tu dirección">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input
+          label="Teléfono"
+          labelPlacement="stacked"
+          type="tel"
+          formControlName="telefono"
+          placeholder="Tu número de teléfono">
+        </ion-input>
+      </ion-item>
+    </ion-list>
+
+    <!-- Preferencias -->
+    <ion-list inset="true">
+      <ion-list-header>
+        <ion-label>Preferencias</ion-label>
+      </ion-list-header>
+
+      <ion-item>
+        <ion-label>
+          <h3>Distancia máxima</h3>
+          <p>{{ form.get('distanciaMaxima')?.value }} km</p>
+        </ion-label>
+        <ion-range
+          formControlName="distanciaMaxima"
+          [min]="1"
+          [max]="30"
+          [step]="1"
+          slot="end"
+          style="width: 60%">
+        </ion-range>
+      </ion-item>
+    </ion-list>
+
+    <!-- Tipo de recados -->
+    <ion-list inset="true">
+      <ion-list-header>
+        <ion-label>Tipo de recados</ion-label>
+      </ion-list-header>
+
+      <ion-item>
+        <ion-label>Compra y alimentación</ion-label>
+        <ion-toggle formControlName="recadosCompra" slot="end"></ion-toggle>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Medicación y farmacia</ion-label>
+        <ion-toggle formControlName="recadosMedicacion" slot="end"></ion-toggle>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Trámites y gestiones</ion-label>
+        <ion-toggle formControlName="recadosTramites" slot="end"></ion-toggle>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Transporte y acompañamiento</ion-label>
+        <ion-toggle formControlName="recadosTransporte" slot="end"></ion-toggle>
+      </ion-item>
+    </ion-list>
+
+    <div class="ion-padding">
+      <ion-button expand="block" type="submit" [disabled]="form.invalid" class="save-btn">
+        Guardar cambios
+      </ion-button>
+    </div>
+
+  </form>
+</ion-content>

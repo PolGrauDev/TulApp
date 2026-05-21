@@ -1,2 +1,42 @@
-// For information on how to create your own theme, please refer to:
-// https://ionicframework.com/docs/theming/
+// Paleta principal - Rojo Santander + tonos rurales cálidos
+:root {
+  --ion-color-primary: #EC0000;
+  --ion-color-primary-rgb: 236, 0, 0;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #d00000;
+  --ion-color-primary-tint: #ee1a1a;
+
+  --ion-color-secondary: #8B4513;
+  --ion-color-secondary-rgb: 139, 69, 19;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-shade: #7a3c11;
+  --ion-color-secondary-tint: #97582b;
+
+  --ion-color-tertiary: #C8943A;
+  --ion-color-tertiary-rgb: 200, 148, 58;
+  --ion-color-tertiary-contrast: #ffffff;
+  --ion-color-tertiary-shade: #b08233;
+  --ion-color-tertiary-tint: #ce9f4e;
+
+  --ion-color-medium: #7A6B5A;
+  --ion-color-medium-rgb: 122, 107, 90;
+  --ion-color-medium-contrast: #ffffff;
+  --ion-color-medium-shade: #6b5d4f;
+  --ion-color-medium-tint: #877a6b;
+
+  --ion-background-color: #F7F3ED;
+  --ion-background-color-rgb: 247, 243, 237;
+
+  --ion-text-color: #2C1A0E;
+  --ion-text-color-rgb: 44, 26, 14;
+
+  --ion-font-family: -apple-system, 'Segoe UI', sans-serif;
+
+  // Variables personalizadas auth
+  --auth-hero-bg: #EC0000;
+  --auth-card-bg: #FFFFFF;
+  --auth-warm-cream: #F7F3ED;
+  --auth-earth: #5C3D1E;
+  --auth-gold: #C8943A;
+}

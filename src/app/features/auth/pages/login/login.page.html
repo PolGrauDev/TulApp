@@ -1,0 +1,75 @@
+<ion-content [fullscreen]="true" class="login-content">
+  <div class="page-wrapper">
+
+    <div class="brand-section">
+      <div class="logo-square">T</div>
+      <h1 class="app-name">TulApp</h1>
+      <p class="app-tagline">Siempre cerca de ti</p>
+    </div>
+
+    <div class="form-card">
+      <h2 class="form-title">Iniciar sesión</h2>
+      <p class="form-subtitle">Accede a tu cuenta</p>
+
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+        <div class="field">
+          <span class="field-label">EMAIL</span>
+          <ion-input
+            type="email"
+            formControlName="email"
+            placeholder="tu@email.com"
+            autocomplete="email"
+            [class.input-error]="showError('email')">
+          </ion-input>
+          @if (showError('email')) {
+            <span class="field-error">
+              @if (email?.errors?.['required']) { El email es obligatorio }
+              @else { Introduce un email válido }
+            </span>
+          }
+        </div>
+
+        <div class="field">
+          <span class="field-label">CONTRASEÑA</span>
+          <ion-input
+            type="password"
+            formControlName="password"
+            placeholder="Mínimo 8 caracteres"
+            autocomplete="current-password"
+            [class.input-error]="showError('password')">
+          </ion-input>
+          @if (showError('password')) {
+            <span class="field-error">La contraseña es obligatoria</span>
+          }
+        </div>
+
+        @if (error) {
+          <div class="error-message">
+            <ion-text color="danger">{{ error }}</ion-text>
+          </div>
+        }
+
+        <ion-button expand="block" type="submit" [disabled]="loading" class="submit-btn">
+          @if (loading) {
+            <ion-spinner name="crescent"></ion-spinner>
+          } @else {
+            INICIAR SESIÓN
+          }
+        </ion-button>
+
+      </form>
+
+      <div class="divider"></div>
+      <div class="bottom-link">
+        ¿No tienes cuenta? <a routerLink="/auth/role-select">Regístrate →</a>
+      </div>
+      <div class="bottom-link">
+        ¿Olvidaste tu contraseña? <a routerLink="/auth/forgot-password">Restablecer →</a>
+      </div>
+    </div>
+
+    <p class="footer-text">Tus datos están protegidos · Nunca compartimos tu información</p>
+
+  </div>
+</ion-content>

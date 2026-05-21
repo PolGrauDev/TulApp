@@ -1,0 +1,110 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/volunteer-tabs/perfil" text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Información Personal</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ip-content">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <div class="fields-card">
+
+      <div class="field">
+        <span class="field-label">NOMBRE</span>
+        <ion-input
+          formControlName="nombre"
+          placeholder="Tu nombre"
+          autocomplete="given-name"
+          [class.input-error]="showError('nombre')">
+        </ion-input>
+        @if (showError('nombre')) {
+          <span class="field-error">El nombre es obligatorio</span>
+        }
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="field">
+        <span class="field-label">APELLIDOS</span>
+        <ion-input
+          formControlName="apellidos"
+          placeholder="Tus apellidos"
+          autocomplete="family-name"
+          [class.input-error]="showError('apellidos')">
+        </ion-input>
+        @if (showError('apellidos')) {
+          <span class="field-error">Los apellidos son obligatorios</span>
+        }
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="field">
+        <span class="field-label">EMAIL</span>
+        <ion-input
+          type="email"
+          formControlName="email"
+          placeholder="tu@email.com"
+          autocomplete="email"
+          [class.input-error]="showError('email')">
+        </ion-input>
+        @if (showError('email')) {
+          <span class="field-error">
+            @if (form.get('email')?.errors?.['required']) { El email es obligatorio }
+            @else { Introduce un email válido }
+          </span>
+        }
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="field">
+        <span class="field-label">TELÉFONO</span>
+        <ion-input
+          type="tel"
+          formControlName="telefono"
+          placeholder="612 345 678"
+          autocomplete="tel"
+          [class.input-error]="showError('telefono')">
+        </ion-input>
+        @if (showError('telefono')) {
+          <span class="field-error">
+            @if (form.get('telefono')?.errors?.['required']) { El teléfono es obligatorio }
+            @else { Introduce un teléfono válido }
+          </span>
+        }
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="field">
+        <span class="field-label">DIRECCIÓN</span>
+        <ion-input
+          formControlName="direccion"
+          placeholder="Tu dirección completa"
+          autocomplete="street-address"
+          [class.input-error]="showError('direccion')">
+        </ion-input>
+        @if (showError('direccion')) {
+          <span class="field-error">La dirección es obligatoria</span>
+        }
+      </div>
+
+    </div>
+
+    <div class="submit-wrap">
+      <button type="submit" class="submit-btn" [disabled]="loading">
+        @if (loading) {
+          <ion-spinner name="crescent" class="btn-spinner"></ion-spinner>
+        } @else {
+          <ion-icon name="checkmark-outline"></ion-icon>
+          Guardar cambios
+        }
+      </button>
+    </div>
+
+  </form>
+</ion-content>

@@ -25,17 +25,22 @@
       <ng-container *ngIf="solicitudesFiltradas.length > 0; else sinSolicitudes">
         <div *ngFor="let s of solicitudesFiltradas" class="sol-card" role="article"
           [attr.aria-label]="s.tipo + ' - ' + s.estado">
+
           <div class="sol-card__icon-wrap">
             <ion-icon [name]="s.icon" aria-hidden="true"></ion-icon>
           </div>
+
           <div class="sol-card__info">
             <span class="sol-card__tipo">{{ s.tipo }}</span>
-            <span class="sol-card__fecha">{{ s.fecha }}</span>
+            <div class="sol-card__meta">
+              <span class="sol-card__fecha">{{ s.fecha }}</span>
+              <span class="sol-card__badge" [ngClass]="'sol-card__badge--' + s.estadoKey"
+                [attr.aria-label]="'Estado: ' + s.estado">
+                {{ s.estado }}
+              </span>
+            </div>
           </div>
-          <span class="sol-card__badge" [ngClass]="'sol-card__badge--' + s.estadoKey"
-            [attr.aria-label]="'Estado: ' + s.estado">
-            {{ s.estado }}
-          </span>
+
         </div>
       </ng-container>
 

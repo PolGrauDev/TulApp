@@ -133,7 +133,7 @@ export const environment = {
 
 - **Componentes** — Standalone, con `inject()` para inyección de dependencias
 - **Formularios** — Reactive Forms (`FormGroup` + `FormControl` tipado y `nonNullable`)
-- **Estilos** — Metodología BEM, variables CSS con prefijo `--tula-`
+- **Estilos** — Metodología BEM, variables CSS
 - **Suscripciones** — Gestionadas con `takeUntilDestroyed()` para evitar memory leaks
 - **Constantes y tipos** — Definidos fuera del componente, candidatos a servicio propio
 

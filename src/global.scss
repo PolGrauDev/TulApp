@@ -1,37 +1,107 @@
-/*
- * App Global CSS
- * ----------------------------------------------------------------------------
- * Put style rules here that you want to apply globally. These styles are for
- * the entire app and not just one component. Additionally, this file can be
- * used as an entry point to import other CSS/Sass files to be included in the
- * output CSS.
- * For more information on global stylesheets, visit the documentation:
- * https://ionicframework.com/docs/layout/global-stylesheets
- */
-
-/* Core CSS required for Ionic components to work properly */
+// Ionic core styles
 @import "@ionic/angular/css/core.css";
-
-/* Basic CSS for apps built with Ionic */
 @import "@ionic/angular/css/normalize.css";
 @import "@ionic/angular/css/structure.css";
 @import "@ionic/angular/css/typography.css";
 @import "@ionic/angular/css/display.css";
-
-/* Optional CSS utils that can be commented out */
 @import "@ionic/angular/css/padding.css";
 @import "@ionic/angular/css/float-elements.css";
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
 
-/**
- * Ionic Dark Mode
- * -----------------------------------------------------
- * For more info, please see:
- * https://ionicframework.com/docs/theming/dark-mode
- */
-
-/* @import "@ionic/angular/css/palettes/dark.always.css"; */
-/* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import '@ionic/angular/css/palettes/dark.system.css';
+
+// Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700&display=swap');
+
+// ------------------------------------------------------------
+// Design Tokens
+// ------------------------------------------------------------
+:root {
+  // Greens
+  --tula-primary:        #2E7D32;
+  --tula-primary-dark:   #1B5E20;
+  --tula-primary-mid:    #2D6A4F;
+  --tula-primary-light:  #E8F5E9;
+  --tula-primary-subtle: #A5D6A7;
+  --tula-on-primary:     #FFFFFF;
+
+  // Status
+  --tula-danger:         #C0392B;
+  --tula-danger-light:   #FDECEA;
+  --tula-warning:        #E65100;
+  --tula-warning-light:  #FFF3E0;
+
+  // Surfaces
+  --tula-bg:             #F5F0E8;
+  --tula-surface:        #FFFFFF;
+  --tula-surface-warm:   #FAF8F5;
+  --tula-border:         #C8BFA8;
+
+  // Text
+  --tula-text-primary:   #1A1A1A;
+  --tula-text-muted:     #5A5246;
+
+  // Accent
+  --tula-focus-ring:     #FF8F00;
+
+  // Typography
+  --tula-font-display:   'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --tula-font-body:      'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  --tula-text-base:      1.25rem;
+  --tula-text-lg:        1.5rem;
+  --tula-text-xl:        1.75rem;
+  --tula-text-2xl:       2rem;
+
+  // Spacing
+  --tula-spacing-xs:     0.5rem;
+  --tula-spacing-sm:     0.75rem;
+  --tula-spacing-md:     1rem;
+  --tula-spacing-lg:     1.5rem;
+  --tula-spacing-xl:     2.5rem;
+
+  // Radii
+  --tula-radius-md:      12px;
+  --tula-radius-lg:      20px;
+  --tula-radius-full:    9999px;
+}
+
+// ------------------------------------------------------------
+// Base
+// ------------------------------------------------------------
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--tula-font-body);
+  font-size: var(--tula-text-base);
+  color: var(--tula-text-primary);
+  background-color: var(--tula-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+em,
+i {
+  font-style: normal;
+}
+
+:focus-visible {
+  outline: 3px solid var(--tula-focus-ring);
+  outline-offset: 3px;
+}
+
+// ------------------------------------------------------------
+// Ionic overrides
+// ------------------------------------------------------------
+ion-content {
+  --background: var(--tula-bg);
+}
+
+ion-button {
+  font-size: var(--tula-text-base);
+  font-family: var(--tula-font-body);
+  --border-radius: var(--tula-radius-md);
+}

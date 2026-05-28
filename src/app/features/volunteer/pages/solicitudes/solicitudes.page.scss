@@ -1,6 +1,6 @@
 ion-toolbar {
-  --background: #ffffff;
-  --color: #1A1A1A;
+  --background: var(--tula-surface);
+  --color: var(--tula-text-primary);
   --padding-start: 16px;
   --padding-end: 16px;
 
@@ -14,19 +14,19 @@ ion-toolbar {
 
 .notif-icon {
   font-size: 24px;
-  color: #1A1A1A;
+  color: var(--tula-text-primary);
   margin-right: 4px;
   cursor: pointer;
 }
 
 .sol-content {
-  --background: #F5F5F5;
+  --background: var(--tula-bg);
 }
 
 .page-title {
   font-size: 22px;
   font-weight: 800;
-  color: #1A1A1A;
+  color: var(--tula-text-primary);
   margin: 20px 16px 14px;
 }
 
@@ -38,18 +38,18 @@ ion-toolbar {
 
 .tab-btn {
   padding: 10px 18px;
-  border-radius: 50px;
-  border: 1.5px solid #D0D0D0;
-  background: #ffffff;
-  color: #555;
+  border-radius: var(--tula-radius-full);
+  border: 1.5px solid var(--tula-border);
+  background: var(--tula-surface);
+  color: var(--tula-text-muted);
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
   transition: background 0.2s, color 0.2s, border-color 0.2s;
 
   &.active {
-    background: #1B3A2D;
-    border-color: #1B3A2D;
-    color: #ffffff;
+    background: var(--tula-primary-dark);
+    border-color: var(--tula-primary-dark);
+    color: var(--tula-surface);
   }
 }

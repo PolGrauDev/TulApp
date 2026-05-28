@@ -1,5 +1,5 @@
 .recado-card {
-  background: #ffffff;
+  background: var(--tula-surface);
   border-radius: 18px;
   padding: 16px;
   margin: 0 16px 14px;
@@ -17,7 +17,7 @@
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: #E8F5E9;
+  background: var(--tula-primary-light);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -25,7 +25,7 @@
 
   ion-icon {
     font-size: 30px;
-    color: #2E7D32;
+    color: var(--tula-primary);
   }
 }
 
@@ -38,20 +38,20 @@
 .card-name {
   font-size: 15px;
   font-weight: 700;
-  color: #1A1A1A;
+  color: var(--tula-text-primary);
 }
 
 .card-task {
   font-size: 13px;
-  color: #6B6B6B;
+  color: var(--tula-text-muted);
   margin-top: 2px;
 }
 
 .date-badge {
   font-size: 11px;
   font-weight: 700;
-  color: #C0392B;
-  background: #FDECEA;
+  color: var(--tula-danger);
+  background: var(--tula-danger-light);
   border-radius: 10px;
   padding: 6px 10px;
   text-align: center;
@@ -61,7 +61,7 @@
 
 .card-desc {
   font-size: 13px;
-  color: #6B6B6B;
+  color: var(--tula-text-muted);
   margin: 0 0 14px;
   line-height: 1.5;
 }
@@ -73,10 +73,10 @@
   gap: 8px;
   width: 100%;
   height: 46px;
-  background: #1B3A2D;
+  background: var(--tula-primary-dark);
   border: none;
-  border-radius: 12px;
-  color: #ffffff;
+  border-radius: var(--tula-radius-md);
+  color: var(--tula-surface);
   font-size: 15px;
   font-weight: 700;
   cursor: pointer;
@@ -92,12 +92,12 @@
   width: 100%;
   height: 44px;
   background: transparent;
-  border: 1.5px solid #CCCCCC;
-  border-radius: 12px;
-  color: #1A1A1A;
+  border: 1.5px solid var(--tula-border);
+  border-radius: var(--tula-radius-md);
+  color: var(--tula-text-primary);
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;
 
-  &:active { background: #F0F0F0; }
+  &:active { background: var(--tula-bg); }
 }
